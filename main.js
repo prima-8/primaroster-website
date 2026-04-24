@@ -52,7 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Intersection Observer for scroll animations (fade-in)
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const activeItem = document.querySelector('.faq-item.active');
+      if (activeItem && activeItem !== item) {
+        activeItem.classList.remove('active');
+      }
+      item.classList.toggle('active');
+    });
+  });
+
+  // Intersection Observer for scroll animations (fade-in, slide-in)
   const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -63,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Optional: Stop observing once animated
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  const fadeElements = document.querySelectorAll('.fade-in');
-  fadeElements.forEach(el => {
+  const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+  animatedElements.forEach(el => {
     observer.observe(el);
   });
 });

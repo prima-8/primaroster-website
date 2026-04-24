@@ -101,5 +101,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => observer.observe(el));
 });
