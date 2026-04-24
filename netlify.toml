@@ -1,0 +1,13 @@
+[build]
+  # Perintah yang dijalankan Netlify untuk mem-build website
+  command = "npm run build"
+  # Folder hasil build yang akan di-publish/online-kan
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  # Aturan redirect ini biasanya digunakan untuk Single Page Application,
+  # namun karena Anda memiliki halaman statis terpisah (blog.html, dll), 
+  # baris di atas sebenarnya opsional. Namun ini berguna jika ada rute yang tidak ditemukan.

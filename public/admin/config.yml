@@ -1,0 +1,23 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Tanggal", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Gambar Unggulan", name: "image", widget: "image"}
+      - {label: "Kutipan (Excerpt)", name: "excerpt", widget: "text"}
+      - {label: "Konten", name: "content", widget: "markdown"}

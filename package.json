@@ -1,0 +1,16 @@
+{
+  "name": "website-primaroster",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cms:local": "netlify-cms-proxy-server"
+  },
+  "devDependencies": {
+    "netlify-cms-proxy-server": "^1.3.24",
+    "vite": "^8.0.10"
+  }
+}
