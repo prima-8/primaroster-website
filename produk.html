@@ -17,18 +17,18 @@
       border-bottom: 2px solid var(--color-secondary);
       font-size: 2rem;
     }
-    /* Use a clearly inset image size so product photos look smaller in the catalog. */
-    .product-img-wrapper {
+    /* The production stylesheet is linked after this block; raise specificity so these catalog overrides win. */
+    body .product-img-wrapper {
       height: 220px;
       padding: 16px;
       background-color: #f4f1eb;
     }
-    .product-img-wrapper img {
+    body .product-img-wrapper img {
       width: 60%;
       height: 60%;
       object-fit: contain;
     }
-    .product-card:hover .product-img-wrapper img {
+    body .product-card:hover .product-img-wrapper img {
       transform: none;
     }
   </style>
