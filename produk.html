@@ -17,18 +17,18 @@
       border-bottom: 2px solid var(--color-secondary);
       font-size: 2rem;
     }
-    /* Smaller inset presentation so the complete roster motif has breathing room. */
-    .roster-image-wrapper {
-      height: 220px;
-      padding: 12px;
+    /* Display every catalog product image at 80% without cropping. */
+    .product-img-wrapper {
+      height: 240px;
+      padding: 16px;
       background-color: #f4f1eb;
     }
-    .roster-image-wrapper img {
-      width: 72%;
-      height: 72%;
+    .product-img-wrapper img {
+      width: 80%;
+      height: 80%;
       object-fit: contain;
     }
-    .product-card:hover .roster-image-wrapper img {
+    .product-card:hover .product-img-wrapper img {
       transform: none;
     }
   </style>
@@ -65,7 +65,7 @@
       <h2 class="category-title fade-in">Roster Beton</h2>
       <div class="product-grid mb-5">
         <div class="product-card fade-in">
-          <div class="product-img-wrapper roster-image-wrapper">
+          <div class="product-img-wrapper">
             <img src="/roster-random-hole.jpg" alt="Roster beton motif Random Hole ukuran 20 x 20 cm dengan lubang bundar beragam ukuran" loading="lazy">
           </div>
           <div class="product-info">
@@ -77,7 +77,7 @@
         </div>
 
         <div class="product-card fade-in" style="transition-delay: 0.1s">
-          <div class="product-img-wrapper roster-image-wrapper">
+          <div class="product-img-wrapper">
             <img src="/roster-bintang.jpg" alt="Roster beton motif Bintang ukuran 20 x 20 cm dengan pola bintang geometris berulang" loading="lazy">
           </div>
           <div class="product-info">
