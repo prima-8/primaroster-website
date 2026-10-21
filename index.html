@@ -11,6 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/logo_icon.png">
+  <style>
+    body #produk .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+    @media (max-width: 992px) { body #produk .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { body #produk .product-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -122,6 +127,18 @@
             <h3>Roster Corong</h3>
             <p>Motif bukaan persegi yang meruncing ke bagian tengah. Ukuran: 20 × 20 cm.</p>
             <a href="https://wa.me/6281381267900?text=Halo,%20saya%20tertarik%20dengan%20Roster%20Corong%20ukuran%2020%20x%2020%20cm" class="btn btn-outline btn-sm">Tanya Harga</a>
+          </div>
+        </div>
+
+        <div class="product-card fade-in" style="transition-delay: 0.3s">
+          <div class="product-img-wrapper">
+            <img src="/roster-jabol.jpg" alt="Roster Jabol ukuran 20 x 20 cm dengan pola geometris" loading="lazy">
+          </div>
+          <div class="product-info">
+            <span class="category">Geometris · Motif Jabol</span>
+            <h3>Roster Jabol</h3>
+            <p>Motif persegi dengan bidang segitiga yang membentuk bukaan geometris. Ukuran: 20 × 20 cm.</p>
+            <a href="https://wa.me/6281381267900?text=Halo,%20saya%20tertarik%20dengan%20Roster%20Jabol%20ukuran%2020%20x%2020%20cm" class="btn btn-outline btn-sm">Tanya Harga</a>
           </div>
         </div>
       </div>
