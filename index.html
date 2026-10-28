@@ -12,16 +12,9 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/logo_icon.png">
   <style>
-    body #produk .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-    body #produk .product-grid .product-card:last-child { grid-column: 2; }
-    @media (max-width: 800px) {
-      body #produk .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      body #produk .product-grid .product-card:last-child { grid-column: 1 / -1; width: calc((100% - 24px) / 2); justify-self: center; }
-    }
-    @media (max-width: 600px) {
-      body #produk .product-grid { grid-template-columns: 1fr; }
-      body #produk .product-grid .product-card:last-child { grid-column: auto; width: auto; justify-self: stretch; }
-    }
+    body #produk .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+    @media (max-width: 800px) { body #produk .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { body #produk .product-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -182,6 +175,18 @@
             <h3>Roster K</h3>
             <p>Relief persegi berlekuk dengan dua bukaan persegi tersusun diagonal. Ukuran: 20 × 20 cm.</p>
             <a href="https://wa.me/6281381267900?text=Halo,%20saya%20tertarik%20dengan%20Roster%20K%20ukuran%2020%20x%2020%20cm" class="btn btn-outline btn-sm">Tanya Harga</a>
+          </div>
+        </div>
+
+        <div class="product-card fade-in" style="transition-delay: 0.7s">
+          <div class="product-img-wrapper">
+            <img src="/roster-nako-2l.jpg" alt="Roster Nako 2L ukuran 20 x 20 cm dengan ceruk persegi dan celah vertikal memanjang" loading="lazy">
+          </div>
+          <div class="product-info">
+            <span class="category">Geometris · Nako 2L</span>
+            <h3>Roster Nako 2L</h3>
+            <p>Motif ceruk persegi berpadu dengan celah vertikal memanjang. Ukuran: 20 × 20 cm.</p>
+            <a href="https://wa.me/6281381267900?text=Halo,%20saya%20tertarik%20dengan%20Roster%20Nako%202L%20ukuran%2020%20x%2020%20cm" class="btn btn-outline btn-sm">Tanya Harga</a>
           </div>
         </div>
       </div>
