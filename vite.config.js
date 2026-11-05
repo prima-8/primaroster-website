@@ -1,7 +1,15 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { generateSeoArtifacts } from './scripts/generate-seo-artifacts.js';
 
 export default defineConfig({
+  plugins: [{
+    name: 'generate-seo-artifacts',
+    apply: 'build',
+    closeBundle() {
+      generateSeoArtifacts();
+    },
+  }],
   build: {
     rollupOptions: {
       input: {

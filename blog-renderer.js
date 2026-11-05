@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const delay = index * 0.1;
       html += `
         <div class="product-card fade-in" style="transition-delay: ${delay}s">
-          <a href="/article.html?id=${article.id}">
+          <a href="/artikel/${encodeURIComponent(article.id)}/">
             <div class="product-img-wrapper">
               <img src="${article.image}" alt="${article.title}" loading="lazy">
             </div>
@@ -66,8 +66,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (articleId) {
       const article = blogArticles.find(a => a.id === articleId);
       if (article) {
-        document.title = `${article.title} - Prima Roster Blog`;
-        
+        const canonicalUrl = `${window.location.origin}/artikel/${encodeURIComponent(article.id)}/`;
+        const setMeta = (attribute, key, content) => {
+          let tag = document.head.querySelector(`meta[${attribute}="${key}"]`);
+          if (!tag) {
+            tag = document.createElement('meta');
+            tag.setAttribute(attribute, key);
+            document.head.appendChild(tag);
+          }
+          tag.setAttribute('content', content);
+        };
+        document.title = `${article.title} | Prima Roster`;
+        setMeta('name', 'description', article.excerpt);
+        setMeta('property', 'og:type', 'article');
+        setMeta('property', 'og:site_name', 'Prima Roster');
+        setMeta('property', 'og:title', `${article.title} | Prima Roster`);
+        setMeta('property', 'og:description', article.excerpt);
+        setMeta('property', 'og:url', canonicalUrl);
+        setMeta('property', 'og:image', new URL(article.image, window.location.origin).href);
+        setMeta('name', 'twitter:card', 'summary_large_image');
+        let canonical = document.head.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+          canonical = document.createElement('link');
+          canonical.rel = 'canonical';
+          document.head.appendChild(canonical);
+        }
+        canonical.href = canonicalUrl;
+
         articleContainer.innerHTML = `
           <div class="article-header">
             <div class="article-meta">Diterbitkan pada: ${article.date}</div>
@@ -79,15 +104,15 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="article-content">
             ${article.content}
             <div class="text-center mt-4">
-              <a href="/blog.html" class="btn btn-outline">← Kembali ke Blog</a>
+              <a href="/blog" class="btn btn-outline">← Kembali ke Blog</a>
             </div>
           </div>
         `;
       } else {
-        articleContainer.innerHTML = `<div class="article-header"><h1>Artikel tidak ditemukan.</h1><a href="/blog.html" class="btn btn-primary mt-2">Kembali ke Blog</a></div>`;
+        articleContainer.innerHTML = `<div class="article-header"><h1>Artikel tidak ditemukan.</h1><a href="/blog" class="btn btn-primary mt-2">Kembali ke Blog</a></div>`;
       }
     } else {
-      window.location.href = '/blog.html';
+      window.location.href = '/blog';
     }
   }
 
